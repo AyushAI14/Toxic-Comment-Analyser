@@ -196,3 +196,5 @@ cython_debug/
 
 cred.txt
 artifact
+distilbert=toxic-model-v1
+distilbert=toxic-tokenizer-v1

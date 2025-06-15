@@ -1,0 +1,12 @@
+artifact_root: artifacts
+
+data_ingestion:
+  root_dir : artifacts/data_ingestion
+  data_yt_path: artifacts/data_ingestion/yt_comment.txt
+  data_tw_path:  artifacts/data_ingestion/twitter.txt
+  data_nor_path:  artifacts/data_ingestion/normal.txt
+
+data_transformation:
+  root_dir : artifacts/data_transformation
+  data_yt_path: artifacts/data_ingestion/yt_comment.txt
+  clean_data_yt_path: artifacts/data_transformation/yt_comment.txt

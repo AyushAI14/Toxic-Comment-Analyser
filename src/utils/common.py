@@ -1,24 +1,30 @@
 import os
+from pathlib import Path
 import yaml
 from src.logging import logger
-from box import Box
+from typing import Any
+# from box import config_box
+from box import Box  # fix import
 
-def read_yaml_file(filepath:str)->Box:
-    """
-    This will read file related to yaml
-    """
+def read_yaml_file(filepath: str) -> Box:  # optional typing update
     try:
-        with open(filepath,'w') as f:
-            content = yaml.load(f)
-        logger.debug(f"{filepath} has successfully been extracted")
-        return Box(content)
+        with open(filepath, 'r') as yaml_file:
+            content = yaml.safe_load(yaml_file)
+            logger.debug("YAML file successfully loaded")
+            return Box(content)  # call Box, not config_box
     except Exception as e:
-        raise e 
-
-def create_dir(dirlist:list):
-    
-    try:
-        for dir in dirlist:
-            os.makedirs(dir,exist_ok=True)
+        raise ValueError("YAML file is empty")
     except Exception as e:
         raise e
+
+
+def create_dir(filepath_dirs: list):
+    """
+    Create directories from a list of paths.
+
+    Args:
+        filepath_dirs (list): List of directory paths to create.
+    """
+    for filepaths in filepath_dirs:
+        os.makedirs(filepaths, exist_ok=True)
+        logger.info(f"Created directory at: {filepaths}")

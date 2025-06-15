@@ -7,7 +7,7 @@ class YtCommentExtracter:
         self.downloader = YoutubeCommentDownloader()
 
 
-    def extract_video_id(url):
+    def extract_video_id(self,url):
         parsed_url = urlparse(url)
         # print(parsed_url)
         if 'youtu.be' in parsed_url.netloc:
@@ -29,5 +29,5 @@ class YtCommentExtracter:
         return comments
 
 
-s  = YtCommentExtracter()
-print(s.get_youtube_comments("https://www.youtube.com/watch?v=INxnoCQxfsI"))
+# s  = YtCommentExtracter()
+# print(s.get_youtube_comments("https://www.youtube.com/watch?v=INxnoCQxfsI"))

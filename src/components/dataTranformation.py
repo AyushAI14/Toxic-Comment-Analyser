@@ -13,7 +13,6 @@ class DataTranformation:
                 self.text = [line.strip() for line in f.readlines()]
                 logger.info("yt Comment Text successfully loaded")
 
-
     def text_cleaner(self,text):
         text = text.lower()
         text = self.prettifier.remove_contractions(text)

@@ -10,3 +10,9 @@ data_transformation:
   root_dir : artifacts/data_transformation
   data_yt_path: artifacts/data_ingestion/yt_comment.txt
   clean_data_yt_path: artifacts/data_transformation/yt_comment.txt
+
+model_evalution:
+  root_dir : artifacts/model_evalution
+  clean_data_yt_path: artifacts/data_transformation/yt_comment.txt
+  model_path : artifacts/model_trainer/distilbert-toxic-model-v1
+  tokenizer_path : artifacts/model_trainer/distilbert-toxic-tokenizer-v1

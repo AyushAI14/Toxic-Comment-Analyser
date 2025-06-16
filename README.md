@@ -38,7 +38,6 @@ Analyze YouTube video comments and detect toxicity using a fine-tuned DistilBERT
 ├── templates/index.html           # Frontend template
 ├── src/                           # ML pipeline modules
 ├── artifacts/                     # Stored artifacts
-├── distilbert-toxic-model-v1/     # Pretrained model files
 ├── notebook/                      # EDA, training notebooks
 ├── Dockerfile                     # For containerization
 ├── requirements.txt               # Python dependencies

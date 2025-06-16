@@ -2,8 +2,7 @@
 
 Analyze YouTube video comments and detect toxicity using a fine-tuned DistilBERT model, all wrapped in a FastAPI backend and a minimal frontend UI.
 
-![Result Image](https://github.com/user-attachments/assets/e1eb2d7c-ade5-4810-a295-c5a29037cc8a)
-
+![Image](https://github.com/user-attachments/assets/f986cbdb-b0e3-44a3-a0f9-c17938194cfd)
 ---
 
 ## 🚀 Features
@@ -44,6 +43,8 @@ Analyze YouTube video comments and detect toxicity using a fine-tuned DistilBERT
 ├── config/config.yaml             # Configuration
 ├── main.py                        # Alternate CLI entrypoint
 └── README.md                      # This file
+
+---
 
 ---
 

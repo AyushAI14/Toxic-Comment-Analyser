@@ -44,7 +44,7 @@ Analyze YouTube video comments and detect toxicity using a fine-tuned DistilBERT
 ├── main.py                        # Alternate CLI entrypoint
 └── README.md                      # This file
 
----
+```
 
 ---
 

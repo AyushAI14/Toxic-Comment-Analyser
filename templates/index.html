@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Toxic Comment Analyzer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 5rem auto;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    form {
+      margin-top: 2rem;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      margin-top: 1rem;
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .result-box {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #e6ffe6;
+      border: 1px solid #a3d7a3;
+      border-radius: 8px;
+    }
+    .error-box {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #ffe6e6;
+      border: 1px solid #d7a3a3;
+      border-radius: 8px;
+    }
+      /* Loader */
+    .loader {
+      display: none;
+      margin: 2rem auto;
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #4CAF50;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Toxic Comment Analyzer</h1>
+  <form method="get" action="/" onsubmit="document.getElementById('loader').style.display = 'block';">
+    <input type="text" name="url" placeholder="Enter YouTube video URL" required>
+    <button type="submit">Analyze</button>
+  </form>
+  
+  <div id="loader" class="loader"></div>
+  
+
+  {% if result %}
+  <div class="result-box">
+    <p><strong>Label:</strong> {{ result.label }}</p>
+    <p><strong>Percentage:</strong> {{ result.percentage }}%</p>
+    <p><strong>Average Confidence:</strong> {{ result.average_confidence }}</p>
+    <p><strong>Overall Result:</strong> Your comments are  {{ result.percentage }}% {{ result.label }} with an average model confidence of {{ result.average_confidence }}. </p>
+  </div>
+  {% endif %}
+
+  {% if error %}
+  <div class="error-box">
+    <p><strong>Error:</strong> {{ error }}</p>
+  </div>
+  {% endif %}
+</body>
+</html>

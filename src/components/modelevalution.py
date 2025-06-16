@@ -23,5 +23,15 @@ class ModelEvalution:
         most_common_label = Counter(labels).most_common(1)[0][0]
         most_common_label_count = Counter(labels).most_common(1)[0][1]
         percentage = (most_common_label_count/len(labels))*100
-        print(f"Result = Your comments are {percentage:.1f}% {most_common_label} with an average model confidence of {np.mean(scores):.2f}.")
+        avg_confidence = float(np.mean(scores))
+        result_dict = {
+            "label": most_common_label,
+            "percentage": round(percentage, 1),
+            "average_confidence": round(avg_confidence, 2),
+            "Overall Result":f"Your comments are {percentage:.2f}% {most_common_label} with an average model confidence of {avg_confidence:.2f}"
+            }
+
+        logger.info(f"Prediction result: {result_dict}")
+        return result_dict
+
             

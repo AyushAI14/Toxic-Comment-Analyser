@@ -19,6 +19,7 @@ Analyze YouTube video comments and detect toxicity using a fine-tuned DistilBERT
 
 ## 🛠 Tech Stack
 
+- Python
 - FastAPI
 - HuggingFace Transformers (`distilbert-toxic-model`)
 - PyTorch

@@ -52,7 +52,8 @@ Analyze YouTube video comments and detect toxicity using a fine-tuned DistilBERT
 ## 🎯 Next Goals
 
 - Dockerization
-- CI/CD Integration
 - Deployment
+- CI/CD Integration
+
 
 ---

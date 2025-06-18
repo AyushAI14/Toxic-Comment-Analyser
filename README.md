@@ -13,7 +13,7 @@ Analyze YouTube video comments and detect toxicity using a fine-tuned DistilBERT
 - 📊 Shows percentage of toxic/non-toxic comments + average confidence
 - 🖥️ Simple frontend with HTML+CSS and a loading spinner
 - 📁 MLOps-structured project with modular components
-- 🐳 Docker-ready
+- 🐳 Dockerization
 
 ---
 
@@ -51,9 +51,7 @@ Analyze YouTube video comments and detect toxicity using a fine-tuned DistilBERT
 
 ## 🎯 Next Goals
 
-- Dockerization
 - Deployment
 - CI/CD Integration
-
 
 ---

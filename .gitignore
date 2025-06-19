@@ -195,6 +195,9 @@ cython_debug/
 
 
 cred.txt
-artifacts
+artifacts/data_ingestion
+artifacts/model_evalution
+artifacts/data_transformation
 distilbert-toxic-model-v1
 distilbert-toxic-tokenizer-v1
+toxic.pem

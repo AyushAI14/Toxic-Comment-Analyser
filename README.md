@@ -27,7 +27,7 @@ Analyze YouTube video comments and detect toxicity using a fine-tuned DistilBERT
 - Jinja2 (for rendering)
 - Logging & YAML Configs
 - Docker
-
+- Deployment in EC2
 ---
 
 ## 📂 Project Structure
@@ -51,7 +51,6 @@ Analyze YouTube video comments and detect toxicity using a fine-tuned DistilBERT
 
 ## 🎯 Next Goals
 
-- Deployment
 - CI/CD Integration
 
 ---

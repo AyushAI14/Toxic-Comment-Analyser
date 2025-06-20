@@ -22,7 +22,7 @@ jobs:
 
     - name: Deploy over SSH
       run: |
-        ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+        ssh -o ServerAliveInterval=60 ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
           cd ~/Toxic-Comment-Analyser
           git pull origin main
           docker build -t toxic-comment-analyser .
@@ -35,3 +35,4 @@ jobs:
             -v ~/Toxic-Comment-Analyser/artifacts/model_trainer/distilbert-toxic-tokenizer-v1:/app/artifacts/model_trainer/distilbert-toxic-tokenizer-v1 \
             toxic-comment-analyser
         EOF
+

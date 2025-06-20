@@ -5,3 +5,5 @@ artifacts/data_transformation
 artifacts/model_trainer/distilbert-toxic-model-v1
 toxic.pem
 .venv
+deploy-key
+deploy-key.pub

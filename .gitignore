@@ -199,3 +199,5 @@ artifacts/data_ingestion
 artifacts/model_evalution
 artifacts/data_transformation
 toxic.pem
+deploy-key
+deploy-key.pub

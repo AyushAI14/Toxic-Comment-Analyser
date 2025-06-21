@@ -28,6 +28,7 @@ Analyze YouTube video comments and detect toxicity using a fine-tuned DistilBERT
 - Logging & YAML Configs
 - Docker
 - Deployment app in EC2
+- CI/CD Integration
 ---
 
 ## 📂 Project Structure
@@ -49,8 +50,3 @@ Analyze YouTube video comments and detect toxicity using a fine-tuned DistilBERT
 
 ---
 
-## 🎯 Next Goals
-
-- CI/CD Integration
-
----

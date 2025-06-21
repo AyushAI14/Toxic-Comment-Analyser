@@ -13,17 +13,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up SSH
+    - name: Setup SSH key
       run: |
         mkdir -p ~/.ssh
         echo "${{ secrets.EC2_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
 
-    - name: Deploy over SSH
+    - name: Deploy via SSH
       run: |
         ssh -o ServerAliveInterval=60 ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-          cd ~/Toxic-Comment-Analyser
+          cd ~/Toxic-Comment-Analyser || git clone https://github.com/ayushAI14/Toxic-Comment-Analyser.git && cd Toxic-Comment-Analyser
           git pull origin main
           docker build -t toxic-comment-analyser .
           docker stop toxic || true
@@ -35,4 +35,3 @@ jobs:
             -v ~/Toxic-Comment-Analyser/artifacts/model_trainer/distilbert-toxic-tokenizer-v1:/app/artifacts/model_trainer/distilbert-toxic-tokenizer-v1 \
             toxic-comment-analyser
         EOF
-
